@@ -1,0 +1,25 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+#nav{
+    padding-left: 20px;
+    background-color:aqua ;
+
+}
+#content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+#footer{
+    padding-left: 20px;
+    height:40px;
+    background-color: aqua;
+    position: fixed;
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+
+}
