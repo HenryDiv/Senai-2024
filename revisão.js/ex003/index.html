@@ -4,26 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        div{
-            display: grid;
-            grid-template-columns: 100px 100px 100px;
-            
-            align-items: center;
-            justify-content: center;
-        }
-        input{
-            height: 200px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div>
-        <input type="text" id="l1"><input type="text" id="l2"><input type="text" id="l3">
-        <input type="text" id="l4"><input type="text" id="l5"><input type="text" id="l6">
-        <input type="text" id="l7"><input type="text" id="l8"><input type="text" id="l9">
+        <table class="jogo" border="2">
+        <tr>
+            <td class="quadrado"
+            onclick="jogar(this,0)"></td>
+            <td class="quadrado" onclick="jogar(this, 1)"></td>
+            <td class="quadrado" onclick="jogar(this, 2)"></td>
+        </tr>
+
+        <tr>
+            <td class="quadrado" onclick="jogar(this, 3)"></td>
+            <td class="quadrado" onclick="jogar(this, 4)"></td>
+            <td class="quadrado" onclick="jogar(this, 5)"></td>
+        </tr>
+
+        <tr>
+            <td class="quadrado" onclick="jogar(this, 6)"></td>
+            <td class="quadrado" onclick="jogar(this, 7)"></td>
+            <td class="quadrado" onclick="jogar(this, 8)"></td>
+        </tr>
+        </table>
     </div>
-    <button onclick="add()">add</button>
+    <button onclick="resetar()">resetar</button>
     <script src="script.js"></script>
 </body>
 </html>

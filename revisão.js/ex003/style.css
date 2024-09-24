@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quadrado{
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 25px;
+   
+    
+}
+table{
+    border-spacing: 5px;
+    background-color: #d1d1d1;
+    border-radius: 25px;
+    border: none;
+}
+tr{
+    border: 1px solid black;
+}
+button{
+    width: 200px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
