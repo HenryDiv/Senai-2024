@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+        font-family: "Silkscreen", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color:  #acd5fd ;
+
+    }
+     .wrap{
+        color: black;
+        background-color: #0077cc;
+        border-radius: 25px;
+        width: 400px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center; 
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;        }
+        .wrap div{
+            margin-top: 20px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        button{
+            font-family: "Silkscreen", sans-serif;
+            margin-top: 10px;
+            border: none;
+            border-radius: 25px;
+            width: 40%;
+            height: 25px;
+        }
+        input{
+            height: 30px;
+            padding-left: 10px;
+            border-radius: 25px;
+            border: none;
+            width: 100%;
+        }
+        button:hover{
+            transition: all 200ms linear;
+            cursor: pointer;
+            background-color: #000000;
+            color: #ffff;
+        }
+</style>
+<body>
+    <h1>2.Filtrar um Array com apenas números pares
+    </h1>
+    <div class="wrap">
+        <div>
+            <input type="number"  id="input">
+            <button onclick="add()">add</button>
+            <button onclick="del()">delete</button>
+            <button onclick="pares()">números pares</button>
+        </div>
+        <h1>Elementos do array: <span id="array"></span></h1>
+        <h1>Números pares: <span id="par"></span></h1>
+    </div>
+    
+</body>
+</html>
