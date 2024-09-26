@@ -9,6 +9,6 @@ function add(){
 function del(){
 
     var input=document.getElementById("input").value
-    num.pop(input)
+    num.pop(input)//não utilizar paramentro
     document.getElementById("array").innerHTML = num
 }

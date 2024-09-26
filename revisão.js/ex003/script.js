@@ -14,6 +14,9 @@ function jogar(quadrado, index){
     }
 
 }
+function resetar(){
+    window.location.reload(true);
+}
 
 
 
