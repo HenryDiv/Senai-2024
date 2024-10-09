@@ -1,0 +1,48 @@
+<style>
+    .container{
+        border-radius: 25px;
+        padding-top: 20px;
+        margin-top: 40px;
+    }
+
+     *{
+          font-family: "Outfit", sans-serif;
+
+    }
+    html{
+        background-color: #007bff;
+    }
+    main{
+        height: 100vh;
+         background-color: #007bff ;
+    }
+    a{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+</style>
+<main>
+     <div class="container" style="background-color: #cacaca;">
+            <div class="row" >
+                <h1 class="text-center">Veiculos cadastrados</h1>
+                <h1 class="text-center"><a href="/" class="btn btn-primary">Cadastrar Novo Veiculo</a></h1>
+               {{#each carros}}
+               
+                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-4" style="border-radius: 25px;">
+                    <div class="card" style="background-color: #cacaca;">
+                        <div class="textos">
+                            <p>id: {{id}} </p>
+                            <p>Marca: {{marca}} </p>
+                            <p> Modelo: {{modelo}} </p>
+                            <p>Ano: {{ano}} </p>
+                            <p>proprietário: {{proprietario}} </p>
+                            <p>Cor: {{cor}} </p>
+                        </div>
+                        <a href="/formEditar/{{id}}" class="btn btn-warning my-1">alterar</a>
+                        <a href="/remover/{{id}}" class="btn btn-danger my-1">remover</a>
+                    </div>
+                </div>
+               {{/each}}
+            </div>
+         </div>
+</main>

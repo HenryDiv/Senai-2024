@@ -1,5 +1,5 @@
 const express = require ('express')
-const mysql= require("mysql")
+const conexao = require ('./db')
 const app = express()
 const  {engine} = require ('express-handlebars')
 
@@ -15,19 +15,6 @@ app.set('views', './views');
 app.use(express.json());
 app.use(express.urlencoded({extends:false}))
 
-
-const conexao=mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'',
-    database:'api_veiculos'
-
-});
-conexao.connect(function(erro){
-    if(erro) throw erro;
-    console.log('conexao sucessful')
-});
-
 app.get('/',(req,res)=>{
     res.render('api')
       
@@ -36,7 +23,7 @@ app.get('/',(req,res)=>{
 //view veiculos cadastrados
 app.get('/viewall',(req,res)=>{ 
 conexao.query('SELECT * FROM veiculos', function view(erro,retorno){
-    res.render("api", {carros:retorno})
+    res.render("viewall", {carros:retorno})
   
 })
 
@@ -86,6 +73,35 @@ app.get('/remover/:id', function(req,res){
 
         console.log(retorno)
         res.redirect('/')
+    })
+ })
+
+ app.get('/search', function (req,res){
+    let id=req.query.id
+    const query = `SELECT * FROM veiculos WHERE id=?`;
+    const values=[id];
+    conexao.query(query,values, function(erro, retorno){
+        if (erro) throw erro
+        res.render('searchId', { carros: retorno.length ? retorno : [] });
+    })
+ })
+ app.get('/searchYear', function (req,res){
+    let year=req.query.ano
+    const query=`SELECT * FROM veiculos WHERE ano=?`;
+    const values=[year]
+    conexao.query(query,values, function(erro,retorno){
+        if (erro) throw erro
+        res.render('searchYear', {carros: retorno.length?retorno : []})
+    })
+ })
+
+ app.get('/searchColor',function(req,res){
+    let cor=req.query.cor
+    const query=`SELECT * FROM veiculos WHERE cor=?`;
+    const values=[cor]
+    conexao.query(query,values, function (erro,retorno){
+        if (erro) throw erro
+        res.render('searchColor', {carros:retorno.length?retorno : []})
     })
  })
  app.post('/cadastrar', function (req,res){ //cadastro 

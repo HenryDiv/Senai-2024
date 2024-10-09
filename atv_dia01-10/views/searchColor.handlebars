@@ -1,0 +1,75 @@
+<style>
+    form{
+        background-color: #cacaca;
+        border-radius: 25px;
+        width: 400px;
+        height: 400px;
+        
+    }
+    
+     *{
+          font-family: "Outfit", sans-serif;
+
+    }
+    main{
+        height: 100vh;
+        background-color: #007bff ;
+        flex-direction: column;
+        height: 100vh;
+    }
+.textos{
+    padding-left: 20px;
+}
+.textos p{
+    margin: 20px;
+}
+.erro{
+    background-color: #cacaca;
+    border-radius: 25px;
+    padding: 20px;
+}
+</style>
+
+<main class="d-flex align-items-center   ">
+
+    <div class="container my-4 att d-flex align-items-center  justify-content-center">
+       
+           
+               <form action="/searchColor" method="get"> 
+                <div class="d-flex flex-column mb-3  align-items-center justify-content-center mx-5 py-4"  >
+                    <input type="text" name="cor"  class="form-control my-2" placeholder="Digite a cor do veiculo" >
+                    <input type="submit" class="btn btn-primary" value="busca" id="validationCustom01" required>
+                    <a href="/" class="btn btn-secondary my-2">Cancelar</a>
+                </div>
+               </form>
+         </div>
+
+         <div class="container">
+            <div class="row" >
+                {{#if carros.length}}
+               {{#each carros}}
+                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-4" style="border-radius: 25px;">
+                    <div class="card">
+                        <div class="textos">
+                            <p>id: {{id}} </p>
+                            <p>Marca: {{marca}} </p>
+                            <p> Modelo: {{modelo}} </p>
+                            <p>Ano: {{ano}} </p>
+                            <p>proprietário: {{proprietario}} </p>
+                            <p>Cor: {{cor}} </p>
+                        </div>
+                        <a href="/formEditar/{{id}}" class="btn btn-warning my-1">alterar</a>
+                        <a href="/remover/{{id}}" class="btn btn-danger my-1">remover</a>
+                    </div>
+                </div>
+               {{/each}}
+               {{else}}
+               <div class="erro">
+                   <h1>Algo deu errado</h1>
+                   <p>Nenhum veiculo encontrado</p>
+               </div>
+            </div>
+            {{/if}}
+         </div>
+        
+</main>
