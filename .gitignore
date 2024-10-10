@@ -9,7 +9,7 @@ lerna-debug.log*
 
 atv_dia01-10/node_modules
 aula26-09_nodeJs/node_modules
-node_modules
+node_modules/
 dist
 dist-ssr
 *.local

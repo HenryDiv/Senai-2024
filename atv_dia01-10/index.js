@@ -39,13 +39,6 @@ app.get('/remover/:id', function(req,res){
     });
 });
 
- app.get('/viewid/:id', (req, res) => { //view id
-    const { id } = req.params; 
-   conexao.query(`SELECT * FROM veiculos WHERE id=${id}`,(err,result)=>{
-    res.send(result);
-   })
- });
-
  app.get('/formEditar/:id', function(req,res){
  conexao.query(`SELECT * FROM veiculos WHERE id=${req.params.id}`,function(erro,result){
     // caso haja erro comando sql

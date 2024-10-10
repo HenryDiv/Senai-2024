@@ -30,24 +30,8 @@ app.delete('/remover/:id', function(req,res){
     });
 });
 
- app.get('/viewid/:id', (req, res) => { //view id
-    const { id } = req.params; 
-   conexao.query(`SELECT * FROM veiculos WHERE id=${id}`,(err,result)=>{
-    res.send(result);
-   })
- });
 
- app.put('/editar/:id', function(req,res){
- conexao.query(`SELECT * FROM veiculos WHERE id=${req.params.id}`,function(erro,result){
-    // caso haja erro comando sql
-    if(erro) throw erro
-
-    //caso execute 
-  res.send(result)
- })
-    
- })
-
+//editar por id
  app.put('/editar/:id', function(req,res){
     let id=req.params
     let marca=req.body.marca;
@@ -57,7 +41,7 @@ app.delete('/remover/:id', function(req,res){
     let cor=req.body.cor;
 
     const query = `UPDATE veiculos SET marca = ?, modelo = ?, ano = ?, proprietario = ?, cor = ? WHERE id = ?`;
-    const values = [marca, modelo, ano, prop, cor, id];
+    const values = [marca, modelo, number(ano), prop, cor, id];
     
     conexao.query(query, values, function (erro, retorno) {
         if (erro) throw erro
@@ -66,17 +50,18 @@ app.delete('/remover/:id', function(req,res){
         res.send(retorno)
     })
  })
- app.get('/search', function (req,res){
-    let id=req.query.id
-    const query = `SELECT * FROM veiculos WHERE id=?`;
-    const values=[id];
-    conexao.query(query,values, function(erro, retorno){
-        if (erro) throw erro
-       res.send(retorno)
-    })
- })
+
+ //view por id
+ app.get('/viewid/:id', (req, res) => { //view id
+    const { id } = req.params; 
+   conexao.query(`SELECT * FROM veiculos WHERE id=${id}`,(err,result)=>{
+    res.send(result);
+   })
+ });
+
+ //buscar por ano 
  app.get('/searchYear', function (req,res){
-    let year=req.query.ano
+    let year=req.body.ano
     const query=`SELECT * FROM veiculos WHERE ano=?`;
     const values=[year]
     conexao.query(query,values, function(erro,retorno){
@@ -85,6 +70,8 @@ app.delete('/remover/:id', function(req,res){
     })
  })
 
+
+//buscar por cor
  app.get('/searchColor',function(req,res){
     let cor=req.body.cor
     const query=`SELECT * FROM veiculos WHERE cor=?`;
@@ -94,6 +81,7 @@ app.delete('/remover/:id', function(req,res){
         res.send(retorno)
     })
  })
+
  app.post('/cadastrar', function (req,res){ //cadastro 
     let marca=req.body.marca;
     let modelo=req.body.modelo;
