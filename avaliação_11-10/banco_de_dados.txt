@@ -28,9 +28,12 @@ select * from funcionario;
 CREATE VIEW vw_funcionario_por_id AS
 SELECT id, nome, sobrenome
 FROM funcionario;
-
+drop view vw_cargo_por_id;
 CREATE VIEW vw_cargo_por_id AS 
-SELECT cargo,dep_id,id_cargo from cargo inner join departamento ;
+SELECT c.cargo, c.id_cargo, d.departamento 
+FROM cargo c 
+JOIN departamento d ON c.dep_id = d.id_dep;
+
 
 
 CREATE VIEW vw_cargo_por_dep AS
