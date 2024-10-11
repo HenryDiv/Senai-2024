@@ -146,16 +146,24 @@ app.delete('/delfunc/:id', function(req,res){
 app.delete('/delcargo/:id', function(req, res) {
     const id = req.params.id;
 
-    const sql = `
-    DELETE FROM cargo WHERE id_cargo= ?`;
-    const valor = [id];
+    const sqlUpdateFuncionarios = `UPDATE funcionario SET cargo_id = NULL WHERE cargo_id = ?`;
 
-    conexao.query(sql, valor, function(err, res) {
-        if (err) throw err
-        res.send(res)
-        console.log(res)
+    conexao.query(sqlUpdateFuncionarios, [id], function(err, result) {
+       if(err) throw err
+       console.log(result)
+       res.send(result)
+
+
+        const sqlDeleteCargo = `DELETE FROM cargo WHERE id_cargo = ?`;
+
+        conexao.query(sqlDeleteCargo, [id], function(err, result) {
+            if (err) throw err
+            console.log(result)
+            res.send(result)
+        });
     });
 });
+
 
 
 app.delete('/deldep/:id', function(req,res){
