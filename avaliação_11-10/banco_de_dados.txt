@@ -1,0 +1,41 @@
+create database empresa;
+use empresa;
+
+CREATE TABLE funcionario(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome varchar (50) not null,
+sobrenome varchar (50) not null,
+cargo_id integer,
+constraint fk_idcargo foreign key(cargo_id) references cargo (id_cargo)
+);
+
+CREATE TABLE cargo(
+id_cargo INT AUTO_INCREMENT PRIMARY KEY,
+cargo varchar (50) not null,
+dep_id integer,
+constraint fk_departamento foreign key (dep_id) references departamento (id_dep)
+);
+
+CREATE TABLE departamento(
+id_dep integer AUTO_INCREMENT PRIMARY KEY,
+departamento varchar (50) not null
+);
+
+select * from departamento;
+select * from cargo;
+select * from funcionario;
+
+CREATE VIEW vw_funcionario_por_id AS
+SELECT id, nome, sobrenome
+FROM funcionario;
+
+CREATE VIEW vw_cargo_por_id AS 
+SELECT cargo,dep_id,id_cargo from cargo inner join departamento ;
+
+
+CREATE VIEW vw_cargo_por_dep AS
+SELECT d.departamento,c.cargo FROM departamento d JOIN cargo c ON d.id_dep = c.dep_id;
+
+create view vw_func_por_nome as 
+select f.nome,f.sobrenome,c.cargo from funcionario f join cargo c on f.cargo_id=c.id_cargo
+

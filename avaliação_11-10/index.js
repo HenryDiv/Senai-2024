@@ -142,22 +142,12 @@ app.delete('/delfunc/:id', function(req,res){
     })
 })
 
-app.delete('/delcargo/:id', function(req,res){
-    const id=req.params.id
 
-    const sql= `DELETE FROM cargo where id_cargo=?`
-    const valor=[id]
-    conexao.query(sql,valor, function (err,ret){
-        if (err) throw err
-        res.send (ret)
-        console.log(ret)
-    })
-})
 app.delete('/delcargo/:id', function(req, res) {
     const id = req.params.id;
 
     const sql = `
-        DELETE FROM funcionario WHERE cargo_id IN (SELECT id_cargo FROM cargo WHERE dep_id = ? )`;
+    DELETE FROM cargo WHERE id_cargo= ?`;
     const valor = [id];
 
     conexao.query(sql, valor, function(err, res) {
@@ -171,7 +161,7 @@ app.delete('/delcargo/:id', function(req, res) {
 app.delete('/deldep/:id', function(req,res){
     const id=req.params.id
 
-    const sql= `DELETE FROM funcionario WHERE cargo_id IN (SELECT id_cargo FROM cargo WHERE dep_id = ?)`
+    const sql= `DELETE FROM departamento WHERE id_dep=? `
     const valor=[id]
     conexao.query(sql,valor, function (err,ret){
         if (err) throw err
