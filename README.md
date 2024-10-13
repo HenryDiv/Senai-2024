@@ -1,5 +1,4 @@
 # Senai-2024
-Repositório com todas as atividades feitas no senai no ano de 2024 no curso técnico de Desenvolvimento de sistemas
 
 # Comandos:
 # npm create vite@latest
