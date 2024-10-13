@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lading page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coiny&family=IBM+Plex+Mono&display=swap" rel="stylesheet">   
+
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="menu">
+    <ul>
+        <li><a href="#section01">Section 01</a></li>
+        <li><a href="#section02" >Section 02</a></li>
+        <li><a href="#section03">Section 03</a></li>
+        <li><a href="#section04">Section 04</a></li>
+    </ul>
+</header>
+<main>
+    <section id="section01">
+        <div class="section01-left-div">
+            <img src="img/HKRV4141.JPG" alt="aaaa" class="img-section01">
+        </div>
+        <div class="section01-right-div">
+            <h2 class="l01">Henry</h2>
+            <p class="p01">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi voluptate fugiat ad. Porro numquam similique minus quas officiis autem quaerat. Praesentium tempore voluptate blanditiis nisi accusamus. Excepturi ex beatae enim?</p>
+                
+        </div>
+    </section>
+    <section id="section02">
+        <h2 class="tec-title">Tecnologias</h2>
+        <div class="wrap-tecs">
+            <div><img src="img/html.png" alt="" width="100px" height="auto">
+            <br>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus dicta eveniet, quod nulla tenetur voluptatum ratione voluptate corporis ab soluta facilis velit eos aliquid reprehenderit, vel voluptatibus nostrum unde ad!</p></div>
+            <div><img src="img/c.png" alt="" width="100px" height="auto">
+            <br/>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur doloribus excepturi repellat aut numquam maiores voluptas possimus, quo modi asperiores animi laudantium natus sit cupiditate inventore placeat obcaecati cum culpa!
+        </p>
+        </div>
+            <div><img src="img/javascript.png" alt="" width="100px" height="auto">
+            <br/>
+            <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptate, facere, laboriosam dicta vero ipsum maxime blanditiis officia nobis incidunt aliquid pariatur ullam beatae iste soluta quisquam voluptas. Doloribus, ab?
+             </p>
+            </div>
+        </div>
+    </section>
+    <section id="section03">
+        <div class="left-reference">
+            <h3 class="title-reference">Good kid, m.A.A.d city</h2></br>
+            <div>
+                <p class="p-reference">"good kid, m.A.A.d city" é um álbum de Kendrick Lamar lançado em 2012, que é amplamente aclamado por sua narrativa coesa e profundidade lírica. O álbum é um retrato vívido da vida em Compton, Califórnia, e explora temas como a violência, a identidade e as dificuldades pessoais. 
+
+                    Dividido em duas partes, o álbum começa com "good kid", onde Kendrick apresenta sua visão de uma vida cotidiana cheia de desafios e tentações, e segue com "m.A.A.d city", que mergulha mais fundo em questões de violência e seus efeitos. A história é contada através de um conceito de álbum, onde Kendrick retrata a luta entre os valores pessoais e a realidade dura de seu ambiente.
+                    
+                    Musicalmente, "good kid, m.A.A.d city" mistura elementos de hip-hop com influências de jazz e funk, criando um som único que complementa suas letras introspectivas e detalhadas. O álbum é considerado uma obra-prima do gênero e consolidou Kendrick Lamar como um dos principais artistas do rap contemporâneo.</p>
+            </div>
+            </div>
+        <div class="right-reference">
+            <button class="btn3" onclick="trocar()">Clique aqui</button>
+        </div>
+    </section>
+    <section id="section04">
+        
+        <div class="left-contact">
+            <h2 class="heading-contact">Contato</h2>
+                <div>
+                    <label for="nome">nome</label>
+                    <input type="text" id="nome">
+                </div>
+                <div>
+                <label for="Mensagem">Mensagem</label>
+            <input type="text" id="mensagem">
+        </div>
+        <button class="btn1" onclick="ConferirMensagem()">ConferirMensagem</button>
+        
+        </div>
+        
+        <div class="right-contact" id="rightDiv">
+            <div>
+                <h2></h2>
+                <p>Nome: <span id="confNome"></span></p>
+                <p>Mensagem: <span id="confMsg"></span></p>
+            </div>
+            <button class="btn2" onclick="enviar()"> <img class="whatsapp" src="img/whatsapp.png" alt="" > whatsapp</button>
+
+        </div>
+    </section>
+    <footer>
+        <a target="_blank" href="https://www.instagram.com/henry.lrb/"><img width="40px" height="40px" src="img/instagram.png" alt=""><p style="color: rgb(0, 0, 0);">instagram</p></a>
+        <a target="_blank" href="https://open.spotify.com/user/31itq7rzwektwo3efnuibhikosj4"><img width="40px" height="40px" src="img/spotify.png" alt=""><p style="color: rgb(0, 0, 0);">Spotify</p></a>
+        <a target="_blank" href="https://www.last.fm/pt/user/Henry4i20"><img width="40px" height="40px" src="img/291703_last_fm_last fm_lastfm_logo_icon.png" alt=""><p style="color: rgb(0, 0, 0);">Last Fm</p></a>
+        
+        
+    </footer>
+</main>
+</body>
+</html>

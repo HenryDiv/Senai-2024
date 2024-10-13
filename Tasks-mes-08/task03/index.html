@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Melhoria do html</h1>
+    <main>
+        <h2>Calculadora</h2>
+    </main>
+    <label for="num1">Número 01</label><br />
+    <input type="number" id="num1" /><br /><br />
+    <label for="num2">Número 02</label><br />
+    <input type="number" id="num2" /><br /><br />
+    <label for="op">Escolha um operador: matemático:</label>
+    <select id="operador">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <br /><br />
+    <button onclick="calc()">Calcular</button>
+    <h2 id="resultado"></h2>
+</body>
+</html>
