@@ -3,6 +3,7 @@ introdução ao react
 
 # Comandos:
 # npm create vite@latest
+# npm i express ->
 # npm install -> instala nodemodules
 # npm init -y -> inicializa o package.json 
 # npm i express -> instala o framework express
