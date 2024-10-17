@@ -1,0 +1,15 @@
+*{
+  font-family: cursive  ;
+}
+.fundo-preto{
+  min-height:100vh; 
+  color:white;
+  background-color:black;
+}
+.fundo-branco{
+  min-height:100vh; 
+  background-color:white
+}
+input{
+  width: 400px !important;
+}
